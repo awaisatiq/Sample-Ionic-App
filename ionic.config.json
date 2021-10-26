@@ -1,0 +1,7 @@
+{
+  "name": "WishWhisper",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
