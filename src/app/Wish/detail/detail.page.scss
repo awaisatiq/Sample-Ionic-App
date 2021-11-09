@@ -1,0 +1,170 @@
+.detailInfo {
+    --color1: #fcdb2a;
+    --color2: #ffffff;
+    --color3: #000000;
+    --color4: #000000;
+    height: calc(100% - 205px);
+    overflow: scroll;
+
+    h1 {
+        margin: 0;
+    }
+
+    .box {
+        // height: 180px;
+        background-color: var(--color1);
+        margin: 25px;
+        margin-bottom: 0;
+        border-radius: 5px;
+    }
+    .boxPadding {
+        padding: 3px;
+    }
+    .boxContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        color: var(--color4);
+    }
+
+    .boxAvatar {
+        margin-left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+        .roundImg {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 0;
+            z-index: 1;
+        }
+    }
+
+    .boxWishID {
+        overflow: hidden;
+        .wishID {
+            background-color: black;
+            padding: 5px 10px 5px 10px;
+            border-radius: 10px;
+        }
+    }
+
+    .gradient-border {
+        --borderWidth: 3px;
+        background: var(--color1);
+        position: relative;
+        border-radius: --borderWidth;
+        box-shadow: 0px 0px 11px 0px var(--color3), inset 0px 0px 5px 0px var(--color3);
+    }
+    .gradient-border:after {
+        content: "";
+        position: absolute;
+        top: calc(-1 * var(--borderWidth));
+        left: calc(-1 * var(--borderWidth));
+        height: calc(100% + var(--borderWidth) * 2);
+        width: calc(100% + var(--borderWidth) * 2);
+        background: linear-gradient(60deg, var(--color2), var(--color1));
+        border-radius: calc(2 * var(--borderWidth));
+        z-index: -1;
+        animation: animatedgradient 1s ease alternate infinite;
+        background-size: 300% 300%;
+    }
+
+    @keyframes animatedgradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .boxBoost {
+        height: 24px;
+        width: 100px;
+        float: right;
+        margin-bottom: 53px;
+        margin-right: 50px;
+        background-color: var(--color1);
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+    .boostBoxTopMargin {
+        margin-top: 3px;
+    }
+    .boxBoostContent {
+        color: var(--color4);
+        padding: 1px 10px;
+        font-size: 10px;
+        width: 100%;
+        font-weight: 500;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+    }
+    .boxBoostContent:before {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 24px;
+        width: 21px;
+        z-index: -1;
+        background-color: var(--color1);
+    }
+    .boxBoostContent:before {
+        left: -15px;
+        transform: skew(25deg, 0deg);
+    }
+    .boxBoostContent:before {
+        border-radius: 0 0 0 8px;
+    }
+    .boxBoostContent:after {
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 0;
+        height: 24px;
+        width: 21px;
+        z-index: -1;
+        background-color: var(--color1);
+    }
+    .boxBoostContent:after {
+        right: -15px;
+        transform: skew(-25deg, 0deg);
+    }
+    .boxBoostContent:after {
+        border-radius: 0 0 8px 0;
+    }
+    
+    .walletBox {
+        height: 50px;
+        width: 100%;
+        background-color: #d9fd39;
+        border-radius: 10px;
+        box-shadow: 0px 8px 17px -9px #d9fd39;
+        display: flex;
+        justify-content: space-between;
+        color: #222428;
+        padding: 0 20px;
+        align-items: center;
+        position: absolute;
+        
+        h5 {
+            margin: 0;
+        }
+    }
+    .separator {
+        width: 1px;
+        height: 30px;
+        background-color: #b8d04e;
+    }
+}

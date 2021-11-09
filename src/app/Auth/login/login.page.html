@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="backButton">
+    <a routerLink="/" routerDirection="back"><ion-icon name="home-outline"></ion-icon></a>
+  </div>
+  <div style="padding: 20px; margin-top: 100px;">
+    <h1>Let's sign you in.</h1>
+    <h3>Welcome back.</h3>
+    <h3>You've been missed!</h3>
+  </div>
+  <div style="margin:20px 30px">
+    <input type="text" placeholder="Email or username">
+  </div>
+  <div style="margin:20px 30px; position: relative;">
+    <input [type]="viewPassword? 'text':'password'" placeholder="Password" name="" id="">
+    <div style="position: absolute; right: 12px; top: 12px; color:#d9fd39">
+      <ion-icon *ngIf="viewPassword" name="eye-outline" (click)="viewPassword = !viewPassword"></ion-icon>
+      <ion-icon *ngIf="!viewPassword" name="eye-off-outline" (click)="viewPassword = !viewPassword"></ion-icon>
+    </div>
+  </div>
+  <div style="margin: 0 30px;">
+    <small><u>Forgot Password?</u></small>
+  </div>
+  <div style="position: absolute; bottom: 0; width: 100%; padding: 20px;">
+    <div style="text-align: center; font-weight: 500; margin-bottom: 20px;">
+      Don't have an account? <a routerLink="/register" routerDirection="back"><b><u>Create Now</u></b></a>
+    </div>
+    <div>
+      <ion-button shape="round" expand="full" style="--background: #d9fd39; --color: #222428">Sign In</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,84 @@
+<ion-content>
+    <div class="backButton">
+        <a routerLink="/">
+            <ion-icon name="home-outline"></ion-icon>
+        </a>
+    </div>
+    <div style="position: absolute; top: 0; left: 0; z-index: 1; height: 100%; width: 100%;">
+        <div style="height: 200px; overflow: hidden;">
+            <img *ngIf="!wL.isLottie" [src]="wL.src" alt="" srcset=""
+                style="height: 200px; width: 100%; object-fit: cover; padding-bottom: 3px;">
+            <lottie-player style="height: 200px;" *ngIf="wL.isLottie" slot="end" autoplay loop src="{{wL.src}}">
+            </lottie-player>
+        </div>
+        <div class="detailInfo"
+            style="--color1: {{wL.style.color1}}; --color2 : {{wL.style.color2}}; --color3: {{wL.style.color3}}; --color4: {{wL.style.color4}}">
+            <!-- <div class="{{ wL.gradientBorder ? 'gradient-border' : ''}}" style="width: 100%;">
+    
+            </div> -->
+            <div style="padding:10px;">
+                <div class="box boxPadding {{ wL.gradientBorder ? 'gradient-border' : ''}}">
+                    <div class="boxContent" style="--bc-color: {{wL.style.color4}}">
+                        <div>
+                            <h1>{{wL.title}}</h1>
+                            <span style="font-weight: 500; font-size: 12px;"><b>views:</b> {{ '1234567' |
+                                number:'1.0':'en-US' }}</span>
+                        </div>
+                        <!-- <div>
+                            <ion-button shape="round" size="small"
+                                style="--background: {{wL.style.color4}}; --color: {{wL.style.color3}}">
+                                Whisper</ion-button>
+                        </div> -->
+                    </div>
+
+                    <div class="boxAvatar">
+                        <div class="roundImg">
+                            <object style="margin: 0;" [innerHTML]="wL.avatar">
+                            </object>
+                        </div>
+                        <div class="boxWishID">
+                            <div class="wishID">
+                                <p style="font-size: 8px; margin: 0;">Wish ID: {{wL.wishID}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div style="width: 100%;">
+                    <div class="boxBoost {{ wL.gradientBorder ? 'boostBoxTopMargin' : ''}}">
+                        <div class="boxBoostContent">
+                            <span style="width: 60px;">Boost: {{'11800' | numberSuffix : 1}}&nbsp;&nbsp;</span>
+
+                            <lottie-player style="height: 20px; width: 20px;" slot="end" autoplay loop
+                                src="../assets/animations/boost.json">
+                            </lottie-player>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <div style="margin: 40px 40px 10px 40px; position: relative;">
+                <div class="walletBox">
+                    <div>
+                        <h5>Wish Wallet</h5>
+                    </div>
+                    <div class="separator">
+
+                    </div>
+                    <div>
+                        <h5><b>{{'1900' | numberSuffix : 1}}</b></h5>
+                    </div>
+                </div>
+
+            </div>
+
+            <div style="margin: 120px 40px 10px 40px;">
+                <h2>Wish Story</h2>
+            </div>
+            <div style="margin: 20px 40px 10px 40px;" [innerHTML]="content">
+                
+            </div>
+        </div>
+    </div>
+
+</ion-content>

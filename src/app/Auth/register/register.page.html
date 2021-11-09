@@ -1,0 +1,43 @@
+<ion-content>
+  <div class="backButton">
+    <a routerLink="/" routerDirection="back"><ion-icon name="home-outline"></ion-icon></a>
+  </div>
+  <div style="padding: 20px; margin-top: 50px;">
+    <h1>Let's sign you up.</h1>
+    <h3>Welcome to Wish Whisper.</h3>
+    <h3>Your wishes are one step away!</h3>
+  </div>
+  <div style="margin:20px 30px; height: 100px; width: 100px;">
+    <object [innerHTML]="avatar">
+    </object>
+  </div>
+  <div style="margin:20px 30px;">
+    <input type="text" placeholder="Username" [(ngModel)]="username" (keyup)="usernameChanged(username)">
+  </div>
+  <div style="margin:20px 30px">
+    <input type="text" placeholder="Email">
+  </div>
+  <div style="margin:20px 30px; position: relative;">
+    <input [type]="viewPassword? 'text':'password'" placeholder="Password" name="" id="">
+    <div style="position: absolute; right: 12px; top: 12px; color:#d9fd39">
+      <ion-icon *ngIf="viewPassword" name="eye-outline" (click)="viewPassword = !viewPassword"></ion-icon>
+      <ion-icon *ngIf="!viewPassword" name="eye-off-outline" (click)="viewPassword = !viewPassword"></ion-icon>
+    </div>
+  </div>
+  <div style="margin:20px 30px; position: relative;">
+    <input [type]="viewCPassword? 'text':'password'" placeholder="Confirm Password" name="" id="">
+    <div style="position: absolute; right: 12px; top: 12px; color:#d9fd39">
+      <ion-icon *ngIf="viewCPassword" name="eye-outline" (click)="viewCPassword = !viewCPassword"></ion-icon>
+      <ion-icon *ngIf="!viewCPassword" name="eye-off-outline" (click)="viewCPassword = !viewCPassword"></ion-icon>
+    </div>
+  </div>
+  
+  <div style="position: absolute; bottom: 0; width: 100%; padding: 20px;">
+    <div style="text-align: center; font-weight: 500; margin-bottom: 20px;">
+      Already have an account? <a routerLink="/login" routerDirection="forward"><b><u>Sign In</u></b></a>
+    </div>
+    <div>
+      <ion-button shape="round" expand="full" style="--background: #d9fd39; --color: #222428">Sign Up</ion-button>
+    </div>
+  </div>
+</ion-content>

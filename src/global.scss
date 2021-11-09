@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,122 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// @font-face {
+//     font-family: "Tajawal";
+//     src: url("assets/font/Tajawal/Tajawal-Regular.ttf");
+// }
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-ExtraLight.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-ExtraLight.ttf");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-ExtraBold.ttf");
+    font-weight: bolder;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-ExtraBold.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-Black.ttf");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Tajawal";
+    src: url("assets/font/Tajawal/Tajawal-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: Tajawal;
+    font-size: 1em;
+}
+
+ion-content {
+    font-family: 'Tajawal';
+}
+
+h1 {
+    font-weight: 900;
+}
+
+h3 {
+    font-weight: 200;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #565656;
+    border-radius: 10px;
+    font-weight: 500;
+    width: 100%;
+}
+
+input:focus, input:active {
+    outline: none;
+    border: 1px solid #d9fd39;
+    box-shadow: 0px 0px 11px 0px #d9fd39, inset 0px 0px 5px 0px #d9fd39;
+}
+
+a{
+    color: #fff;
+}
+
+.backButton {
+    height: 100px;
+    padding: 20px;
+    z-index: 10;    
+    position: absolute;
+    top: 0;
+    left: 0;
+    a {
+        background: #000;
+        padding: 7px 11px 3px 11px;
+        border-radius: 50%;
+        font-size: 24px;
+        box-shadow: 3px 3px 13px -8px #161616;
+    }
+}

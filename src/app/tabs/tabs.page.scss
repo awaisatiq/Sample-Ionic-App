@@ -1,1 +1,26 @@
 
+.customTabs {
+    --background: #d9fd39;
+    height: 100px;
+    width: 130%;
+    margin-left: -15%;
+    border-top-left-radius: 100%100px;
+    border-top-right-radius: 100%100px;
+    position: absolute;
+    bottom: 0;
+}
+
+ion-tab-button {
+    --color: #222428;
+    --color-focused: #222428;
+    --color-selected: #222428;
+    --ripple-color: #88a314;
+}
+
+ion-fab-button {
+    margin-bottom: 7vh;
+    border: 3px solid #1a1a1a;
+    border-radius: 50%;
+    --background: #d9fd39;
+    --color: #222428;
+}

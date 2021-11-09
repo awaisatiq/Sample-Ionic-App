@@ -1,17 +1,120 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+  <!-- <div>
+    <img src="assets/w-logo.png" alt="">
+  </div> -->
+  <div class="header">
+    
+    <div class="headerLeft">
+      <div>
+        <h4>Welcome!</h4>
+      </div>
+      <div>
+        <a routerLink="/register" routerDirection="forward"><small style="color:#ccc">Don't have an account? <u>Create Now</u></small></a>
+      </div>
+    </div>
+    <div class="headerRight" (click)="gotoRoute('/register')">
+        <object class="avatar" [innerHTML]="avatar">
+        </object>
+    </div>
+  </div>
+  <div class="walletBox">
+    <div>
+      <h5>Wish Wallet</h5>
+    </div>
+    <div class="separator">
+
+    </div>
+    <div>
+      <h5><b>{{'1900' | numberSuffix : 1}}</b></h5>
+    </div>
+  </div>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div *ngFor="let wL of wishListing" class="box boxPadding {{ wL.gradientBorder ? 'gradient-border' : ''}}"
+    style="--bg-color: {{wL.style.color1}}; --color2 : {{wL.style.color2}}; --color3: {{wL.style.color3}}">
+    <div class="boxBody">
+      <div (click)="openDetails(wL)">
+        <img *ngIf="!wL.isLottie" [src]="wL.src" alt="" srcset="">
+        <lottie-player style="height: 130px;" *ngIf="wL.isLottie" slot="end" autoplay loop src="{{wL.src}}">
+        </lottie-player>
+      </div>
+      <div class="boxIcons">
+        <div class="top">
+          <div class="viewsCount">
+            <ion-icon name="eye-outline" style="font-size: 12px;"></ion-icon>&nbsp;<p
+              style="font-size: 11px; margin: 0;">{{'10000' | numberSuffix : 1}}</p>
+          </div>
+          <div class="likeBtn">
+            <ion-icon name="heart-outline"></ion-icon>
+          </div>
+        </div>
+        <div style="height: 60px;" (click)="openDetails(wL)">
+
+        </div>
+        <div class="bottomLeft">
+          <div class="boxAvatar">
+            <div class="roundImg">
+              <object style="margin: 0;" [innerHTML]="wL.avatar" (click)="wL.showClass = !wL.showClass">
+              </object>
+            </div>
+            <div class="boxWishID">
+              <div class="wishID"
+                [class]="wL.showClass? 'showWishId' : 'hideWishId'">
+                <p style="font-size: 8px; margin: 0;">Wish ID: {{wL.wishID}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="boxBoost" (click)="openDetails(wL)">
+        <div class="boxBoostContent" style="--bb-bg-color: {{wL.style.color1}}; --bb-color:{{wL.style.color4}}">
+          {{'11800' | numberSuffix : 1}}&nbsp;&nbsp;<lottie-player style="height: 20px;" slot="end" autoplay loop
+            src="../assets/animations/boost.json">
+          </lottie-player>
+        </div>
+      </div>
+    </div>
+    <div class="boxContent" style="--bc-color: {{wL.style.color4}}" >
+      <div (click)="openDetails(wL)">
+        {{wL.title}}
+      </div>
+      <div>
+        <ion-button shape="round" size="small" style="--background: {{wL.style.color4}}; --color: {{wL.style.color3}}">
+          Whisper</ion-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="box gradient-border" style="--bg-color: #fff">
+    <div class="boxBody">
+      <lottie-player slot="end" autoplay loop src="../assets/animations/sample.json">
+      </lottie-player>
+    </div>
+    <div class="boxContent">
+      <div style="color: #ccc">
+        I want to be a Millionair test
+      </div>
+      <div>
+        <button>WHISPER</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="box gradient-border" style="--bg-color: #000">
+    <div class="boxBody">
+      <lottie-player slot="end" autoplay loop src="../assets/animations/sample.json">
+      </lottie-player>
+    </div>
+    <div class="boxContent">
+      <div style="color: #ccc">
+        I want to be a Millionair test
+      </div>
+      <div>
+        <button>WHISPER</button>
+      </div>
+    </div>
+  </div> -->
+  <div style="width: 100%; height: 100px;"></div>
 </ion-content>
